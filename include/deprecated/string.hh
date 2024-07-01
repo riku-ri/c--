@@ -20,6 +20,7 @@ _str(const type_t raw)
 	return std::to_string(raw);
 }
 
+/*
 template<> inline std::string
 str(const char * const raw)
 {
@@ -31,5 +32,6 @@ str(const std::string raw)
 {
 	return raw;
 }
+*/
 
 #endif
