@@ -3,6 +3,8 @@
 
 #include "types.hh"
 
-using auto_t = auto;
+#define auto_t auto
+//using auto_t = auto;
+//error: 'auto' not allowed in type alias
 
 #endif

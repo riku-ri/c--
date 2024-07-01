@@ -9,7 +9,7 @@ class virtual_t {
 };
 
 class prechk_t {
-	virtual ignore_t prechk() = 0;
+	virtual void prechk() = 0;
 };
 
 #endif

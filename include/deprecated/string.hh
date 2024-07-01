@@ -21,7 +21,7 @@ _str(const type_t raw)
 }
 
 template<> inline std::string
-str(const char_t * const raw)
+str(const char * const raw)
 {
 	return std::string{raw};
 }

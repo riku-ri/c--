@@ -3,7 +3,7 @@
 
 #include "of.h"
 
-#include <limit.h>
+#include <limits.h>
 
 /*
  #pragma GCC diagnostic ignored "-Wparentheses"
