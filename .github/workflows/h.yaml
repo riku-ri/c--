@@ -24,7 +24,7 @@ jobs:
   independence-check:
     runs-on: ubuntu-latest
     needs: list-h
-    if: ${{ needs.list-h.outputs.list != '[]' && needs.list-h.outputs.list != '{}' && needs.list-h.outputs.list != '' }}
+    #if: ${{ needs.list-h.outputs.list != '[]' && needs.list-h.outputs.list != '{}' && needs.list-h.outputs.list != '' }}
     strategy:
       matrix: ${{ fromJson(needs.list-h.outputs.list) }}
     steps:
