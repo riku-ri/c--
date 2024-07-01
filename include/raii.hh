@@ -1,5 +1,5 @@
-#ifndef __RAII_INCLUDE_UNIQ__
-#define __RAII_INCLUDE_UNIQ__
+#ifndef __RAII_HH_INCLUDE_UNIQ__
+#define __RAII_HH_INCLUDE_UNIQ__
 
 #include "raii.hh"
 

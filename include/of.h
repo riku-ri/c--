@@ -1,5 +1,5 @@
-#ifndef __OF_INCLUDE_UNIQ__
-#define __OF_INCLUDE_UNIQ__
+#ifndef __OF_H_INCLUDE_UNIQ__
+#define __OF_H_INCLUDE_UNIQ__
 
 #include "of.h"
 

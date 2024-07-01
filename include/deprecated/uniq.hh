@@ -1,5 +1,5 @@
-#ifndef __UNIQ_CC_INCLUDE_UNIQ__
-#define __UNIQ_CC_INCLUDE_UNIQ__
+#ifndef __UNIQ_HH_INCLUDE_UNIQ__
+#define __UNIQ_HH_INCLUDE_UNIQ__
 
 #include "uniq.hh"
 

@@ -1,5 +1,5 @@
-#ifndef __CLASS_INCLUDE_UNIQ__
-#define __CLASS_INCLUDE_UNIQ__
+#ifndef __CLASS_HH_INCLUDE_UNIQ__
+#define __CLASS_HH_INCLUDE_UNIQ__
 
 #include "class.hh"
 

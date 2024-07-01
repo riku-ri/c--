@@ -1,5 +1,5 @@
-#ifndef __STRING_CC_INCLUDE_UNIQ__
-#define __STRING_CC_INCLUDE_UNIQ__
+#ifndef __STRING_HH_INCLUDE_UNIQ__
+#define __STRING_HH_INCLUDE_UNIQ__
 
 #include "string.hh"
 

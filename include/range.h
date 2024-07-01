@@ -1,5 +1,5 @@
-#ifndef __RANGE_INCLUDE_UNIQ__
-#define __RANGE_INCLUDE_UNIQ__
+#ifndef __RANGE_H_INCLUDE_UNIQ__
+#define __RANGE_H_INCLUDE_UNIQ__
 
 #include "range.h"
 

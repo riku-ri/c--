@@ -1,5 +1,5 @@
-#ifndef __BITC_INCLUDE_UNIQ__
-#define __BITC_INCLUDE_UNIQ__
+#ifndef __BITC_H_INCLUDE_UNIQ__
+#define __BITC_H_INCLUDE_UNIQ__
 
 #include "bitc.h"
 

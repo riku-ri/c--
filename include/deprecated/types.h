@@ -1,5 +1,5 @@
-#ifndef __TYPES_INCLUDE_UNIQ__
-#define __TYPES_INCLUDE_UNIQ__
+#ifndef __TYPES_H_INCLUDE_UNIQ__
+#define __TYPES_H_INCLUDE_UNIQ__
 
 #include "types.h"
 
