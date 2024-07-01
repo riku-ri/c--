@@ -33,4 +33,4 @@ jobs:
       with:
         ref: ${{ github.ref }}
     - run: |
-        m4 -D__h__="${{ matrix.h }}" .github/workflows/main.m4.cc | tee /dev/stderr | clang++ -x c - ; stat a.out >/dev/null && rm a.out
+        m4 -D__h__="${{ matrix.h }}" .github/workflows/main.m4.cc | tee /dev/stderr | clang++ -x c++ - ; stat a.out >/dev/null && rm a.out
