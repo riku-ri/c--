@@ -22,8 +22,8 @@ jobs:
       run: |
         find include/. -type f -name '*.h' -o -type f -name '*.hh' \
         | python3 -c "
-          import sys,json
-          print(json.dumps({'h':list(map(lambda h:h.strip() , sys.stdin.readlines()))}))" \
+        import sys,json
+        print(json.dumps({'h':list(map(lambda h:h.strip() , sys.stdin.readlines()))}))" \
         | xargs -0 -I% echo 'list=%' | tee --append "$GITHUB_OUTPUT"
   independence-check:
     runs-on: ubuntu-latest
