@@ -5,6 +5,7 @@ permissions:
   contents: read
 jobs:
   clang-exists:
+    runs-on: ubuntu-latest
     steps:
     - run: clang --version
   list-h:
