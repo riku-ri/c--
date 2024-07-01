@@ -15,4 +15,4 @@ jobs:
               ref: ${{ github.ref }}
         - run: ls -l .github/workflows/main.m4.cc
         - run: clang --version
-        - run: for h in $(find include/. -type f -name '*.h' -o -type f -name '*.hh') ; do m4 -D__h__="$h" .github/workflows/main.m4.cc | clang -x c - ; stat a.out >/dev/null && rm a.out ; done
+        - run: for h in $(find include/. -type f -name '*.h' -o -type f -name '*.hh') ; do m4 -D__h__="$h" .github/workflows/main.m4.cc | tee | clang -x c - ; stat a.out >/dev/null && rm a.out ; done
