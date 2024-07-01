@@ -20,7 +20,7 @@ jobs:
     - run: ls -l .github/workflows/main.m4.cc
     - id: list
       run: |
-        find include/. -type f -name '*.h' -o -type f -name '*.hh' | python3 -c "import sys,json ; print(json.dumps({'h':sys.stdin.readlines()}))" | xargs -0 -I% echo 'list=%' | tee --append "$GITHUB_OUTPUT"
+        find include/. -type f -name '*.h' -o -type f -name '*.hh' | python3 -c "import sys,json ; print(json.dumps({'h':list(map(lambda h:h.strip() , sys.stdin.readlines()))}))" | xargs -0 -I% echo 'list=%' | tee --append "$GITHUB_OUTPUT"
   independence-check:
     runs-on: ubuntu-latest
     needs: list-h
