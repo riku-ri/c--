@@ -26,6 +26,7 @@ jobs:
     needs: list-h
     #if: ${{ needs.list-h.outputs.list != '[]' && needs.list-h.outputs.list != '{}' && needs.list-h.outputs.list != '' }}
     strategy:
+      fail-fast: false
       matrix: ${{ fromJson(needs.list-h.outputs.list) }}
     steps:
     - uses: actions/checkout@main
