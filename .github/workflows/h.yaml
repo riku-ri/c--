@@ -1,18 +1,31 @@
-on: push
+on:
+  push:
+  pull_request:
 permissions:
-    contents: write
+  contents: read
 jobs:
-    h:
-        runs-on: ubuntu-latest
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        steps:
-        - env:
-              GITHUB_CONTEXT: ${{ toJson(github) }}
-          run: echo "$GITHUB_CONTEXT"
-        - uses: actions/checkout@main
-          with:
-              ref: ${{ github.ref }}
-        - run: ls -l .github/workflows/main.m4.cc
-        - run: clang --version
-        - run: for h in $(find include/. -type f -name '*.h' -o -type f -name '*.hh') ; do m4 -D__h__="$h" .github/workflows/main.m4.cc | tee | clang -x c - ; stat a.out >/dev/null && rm a.out ; done
+  clang-exists:
+    - run: clang --version
+  list-h:
+    runs-on: ubuntu-latest
+    needs: clang-exists
+    outputs: fils: ${{ steps.list.outputs.list }}
+    steps:
+    - uses: actions/checkout@main
+      with:
+        ref: ${{ github.ref }}
+    - run: ls -l .github/workflows/main.m4.cc
+    - id: list
+      run: |
+        find include/. -type f -name '*.h' -o -type f -name '*.hh' | python3 -c "import sys,json ; print(json.do=umps({'h':sys.stdin.readlines()}))" | xargs -0 -I% echo 'list=%' | tee -append "$GITHUB_OUTPUT"
+  independence-check:
+    runs-on: ubuntu-latest
+    needs: list-h
+    if: ${{ needs.list-h.outputs.list != '[] && needs.list-h.outputs.list != '{}' && needs.list-h.outputs.list != '' }}
+    strategy:
+      matrix: ${{ fromJson(needs.list-h.outputs.list) }}
+    steps:
+    - uses: actions/checkout@main
+      with:
+        ref: ${{ github.ref }}
+    run: ls ${{ matrix.h }}
