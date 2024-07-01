@@ -1,0 +1,18 @@
+on: push
+permissions:
+    contents: write
+jobs:
+    h:
+        runs-on: ubuntu-latest
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        steps:
+        - env:
+              GITHUB_CONTEXT: ${{ toJson(github) }}
+          run: echo "$GITHUB_CONTEXT"
+        - uses: actions/checkout@main
+          with:
+              ref: ${{ github.ref }}
+        - run: ls -l main.m4.c
+        - run: clang --version
+        - run: for h in $(find include/. -type f -name '*.h' -o -type f -name '*.hh') ; do m4 -D__h__="$h" .github/workflows/main.m4.cc | clang -x c - ; stat a.out >/dev/null && rm a.out ; done
