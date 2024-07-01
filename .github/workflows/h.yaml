@@ -7,7 +7,7 @@ jobs:
   clang-exists:
     runs-on: ubuntu-latest
     steps:
-    - run: clang --version
+    - run: clang++ --version
   list-h:
     runs-on: ubuntu-latest
     needs: clang-exists
@@ -31,4 +31,5 @@ jobs:
     - uses: actions/checkout@main
       with:
         ref: ${{ github.ref }}
-    - run: ls ${{ matrix.h }}
+    - run: |
+      m4 -D__h__="${{ matrix.h }}" .github/workflows/main.m4.cc | clang++ -x c - ; stat a.out >/dev/null && rm a.out
